@@ -1,0 +1,22 @@
+&.emulateTouch {
+	overflow: hidden;
+	user-select: none;
+
+	body {
+		overflow: hidden;
+
+		.modal-scrollable,
+		.show-dropdown {
+			overflow: hidden;
+		}
+
+		.page-container {
+			height: auto;
+			min-height: 100%;
+		}
+		
+		#webcam_container {
+			pointer-events: none;
+		}
+	}
+}

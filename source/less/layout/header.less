@@ -1,0 +1,90 @@
+#navbar {
+	background-color: @main-color;
+	border: 0 none !important;
+
+	.rem(height, 70);
+	width: 100%;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	.navbar-inner {
+		background: transparent !important;
+		border: 0 none !important;
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.tabbable > .nav-tabs li,
+#navbar .nav > li {
+	overflow: hidden;
+	position: relative;
+
+	> a {
+		background: transparent;
+		color: @main-color;
+
+		.rem(height, 70);
+		padding: 0;
+		margin: 0;
+
+		position: relative;
+		z-index: 2;
+		white-space: nowrap;
+		text-align: right;
+
+		&:active {
+			background: darken(@main-color, 15%);
+		}
+
+		&:before {
+			.font-icon-reset();
+			color: @main-color-text;
+			content: '\f128';
+
+			text-align: center;
+			.rem(font-size, 32);
+			.rem(line-height, 70);
+
+			display: block;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			@media(max-width: 320px) {
+				font-size: 10vw !important;
+			}
+		}
+	}
+	&#touchui_dropdown_link a:before {
+		content: none;
+	}
+}
+
+#tabs {
+	.flex-display();
+
+	.nav,
+	&.nav {
+		li {
+			.flex(0 0 100%);
+			max-width: 7rem;
+
+			@media(max-width: 565px) {
+				max-width: 5.5rem;
+			}
+
+			@media(max-width: 352px) {
+				max-width: 5rem;
+			}
+
+			&#touchui_dropdown_link {
+				pointer-events: none;
+			}
+		}
+	}
+}

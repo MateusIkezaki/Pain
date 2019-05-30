@@ -1,0 +1,316 @@
+#navbar {
+	z-index: 2;
+
+	.navbar-inner {
+
+		.container {
+			.rem(height, 66);
+			border:0 none;
+
+			.nav {
+				position: relative;
+				z-index: 23;
+
+				li {
+					width: 100%;
+
+					&.dropdown {
+						margin: 0;
+						z-index: 2;
+
+						&#all_touchui_settings {
+
+							> .dropdown-menu {
+								min-width: 230px;
+							}
+
+							#touchui_text_nonlink_container {
+								margin: 0;
+								list-style: none;
+								overflow: hidden;
+								padding: 5px 0;
+							}
+							
+							b.caret {
+								display: none;
+							}
+
+							&.item_active {
+								background: @main-background;
+
+								> a:before {
+									color: contrast(@main-background);
+								}
+							}
+
+							&.offline > a:before {
+								animation-name: blink_offline;
+							}
+
+							&.online > a:before {
+								animation-name: blink_online;
+							}
+
+							> a:before {
+								animation-duration: 0.6s;
+								animation-iteration-count: 5;
+								content: "\f0c9";
+							}
+
+							&.open {
+								.dropdown-menu {
+									.open {
+										a.dropdown-toggle {
+											background: transparent;
+
+											&:after {
+												content: "\f0d8" !important;
+											}
+										}
+									}
+								}
+							}
+
+							li {
+
+								&.offline {
+									a:before {
+										color: @offline-color;
+									}
+								}
+
+								&.online {
+									a:before {
+										color: @online-color;
+									}
+								}
+
+								&#conn_link2 {
+									a:before {
+										content: "\f1eb";
+									}
+								}
+
+								&#timelapse_link2 {
+									a:before {
+										.rem(font-size, 18);
+									}
+								}
+
+								&#gcode_link2 {
+									a:before {
+										.rem(font-size, 17);
+									}
+								}
+
+								&#navbar_settings {
+									a:before {
+										content: "\f013";
+									}
+								}
+								
+								&#navbar_plugin_announcements {
+									display: none;
+								}
+
+								#usersettings_button {
+									&:before {
+										content: "\f007";
+									}
+								}
+
+								#logout_button {
+									&:before {
+										content: "\f08b";
+									}
+								}
+
+								#navbar_login {
+									a.dropdown-toggle {
+										&:after {
+											.font-icon-reset();
+											content: "\f0d7";
+											position: absolute;
+											right: 20px;
+											margin: 0;
+											.rem(line-height, 40);
+										}
+										&:before {
+											content: "\f023";
+										}
+									}
+								}
+
+								&#navbar_plugin_touchui {
+									a:before {
+										content: "\f10b";
+										.rem(font-size, 28);
+										.rem(line-height, 28);
+										position: relative;
+										top: 5px;
+										margin-top: -9px;
+									}
+								}
+
+								&#navbar_systemmenu {
+									> a {
+										position: relative;
+										display: block;
+										float: none;
+
+										&.active {
+											&:after {
+												content: "\f0d8" !important;
+											}
+										}
+
+										&:before {
+											content: "\f085";
+											.rem(font-size, 19);
+										}
+										i {
+											display: none;
+										}
+										&:after {
+											.font-icon-reset();
+											content: "\f0d7";
+											right: 18px;
+											position: absolute;
+											top: 12px;
+										}
+									}
+									.dropdown-menu {
+										a {
+											&:before {
+												content: "\f101";
+											}
+										}
+									}
+								}
+
+								a {
+									.box-sizing(border-box);
+
+									color: @main-color-text;
+									display: block;
+									text-align: left;
+									width: 100% !important;
+									max-width: 100% !important;
+									height: auto !important;
+									float: none;
+
+									text-overflow: ellipsis;
+									overflow: hidden;
+
+									.icon-wrench{
+										display: none;
+									}
+									
+									&:active {
+										background: darken(@main-color, 15%);
+									}
+									
+									&:hover {
+										background: transparent;
+									}
+
+									&:before {
+										.font-icon-reset();
+										content: '\f128';
+										display: inline-block;
+										margin: 0 15px 0 0;
+										.rem(font-size, 20);
+										.rem(width, 20);
+										position: relative;
+										top: 2px;
+										text-align: center;
+									}
+
+								}
+								
+								&:active > a {
+									background: darken(@main-color, 15%);
+								}
+							}
+						}
+					}
+
+					#youcanhazlogin {
+						margin: 0;
+						width: 100%;
+						overflow: hidden;
+
+						#navbar_login {
+							&.open {
+								#login_dropdown_loggedout {
+									padding: 5px @dropdown-gutter @dropdown-gutter !important;
+									display: block;
+								}
+							}
+						}
+
+						.pull-right small a {
+							display: none;
+						}
+
+						#login_dropdown_loggedout {
+							display: none;
+							border-top: 1px solid @dropdown-divider-color;
+							margin-top: 0;
+							padding: 0;
+							backface-visibility: hidden;
+
+							* {
+								.box-sizing(border-box);
+							}
+
+							input[type="text"],
+							input[type="password"] {
+								width: 100%;
+								display: inline-block;
+								height: 30px;
+								padding-left: 0;
+								padding-right: 0;
+								text-indent: 12px;
+							}
+							
+							&.hide + #login_dropdown_loggedin {
+								display: block;
+							}
+						}
+					}
+
+				}
+			}
+		}
+	}
+
+	#navbar_plugin_touchui {
+		float: none;
+	}
+
+	@keyframes blink_offline {
+		0% {
+			color: @main-color-text;
+		}
+		50% {
+			color: @offline-color;
+		}
+		100% {
+			color: @main-color-text;
+		}
+	}
+
+	@keyframes blink_online {
+		0% {
+			color: @main-color-text;
+		}
+		50% {
+			color: @online-color;
+		}
+		100% {
+			color: @main-color-text;
+		}
+	}
+
+}

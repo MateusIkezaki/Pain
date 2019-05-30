@@ -1,0 +1,96 @@
+@import "_variables.less";
+@import "_mixins.less";
+
+@import "fonts/sourcecodepro.less";
+@import "fonts/touchui.less";
+
+@import "settings/touchui.less";
+@import "components/tinycolorpicker.less";
+
+#touch {
+	width: 100%;
+	height: 100%;
+	background: @main-background;
+	font-size: @main-font-size + 0px;
+
+	@import "components/emulate.touch.less";
+	@import "components/scrollbars.less";
+	@import "layout/touchscreen.less";
+
+	body {
+		width: 100%;
+		height: auto;
+		min-height: 100%;
+		background: @main-background;
+		color: @text-color;
+		position: relative;
+		.rem(font-size, 14);
+		.rem(line-height, 20);
+
+		* {
+			.text-shadow(none) !important;
+			.box-shadow(none) !important;
+			font-family: 'Source Code Pro', monospace;
+		}
+
+		[class^="icon-"], [class*=" icon-"],
+		[class^="fa-"], [class*=" fa-"] {
+			font-family: FontAwesome;
+		}
+
+		.no-pointer * {
+			pointer-events: none !important;
+		}
+
+		#touchui_auto_load_resolution,
+		#touchui_auto_load_touch {
+			display: none;
+		}
+
+		@import "layout/header.less";
+		@import "layout/general.less";
+		@import "layout/links.less";
+		@import "layout/buttons.less";
+		@import "layout/navbar.less";
+		@import "layout/tabbar.less";
+		@import "layout/form.less";
+
+		@import "tabs/webcam.less";
+		@import "tabs/printer.less";
+		@import "tabs/terminal.less";
+		@import "tabs/temperature.less";
+		@import "tabs/controls.less";
+		@import "tabs/gcode.less";
+		@import "tabs/connection.less";
+		@import "tabs/timelapse.less";
+
+		@import "components/progress.less";
+		@import "components/overlays.less";
+		@import "components/files.less";
+		@import "components/modal.less";
+		@import "components/scroll.less";
+		@import "components/keyboard.less";
+		@import "components/dropdown.less";
+		@import "components/notifications.less";
+		@import "components/pagination.less";
+		@import "components/popover.less";
+
+		@import "plugins/navbartemp.less";
+		@import "plugins/history.less";
+		@import "plugins/printerstatistics.less";
+		@import "plugins/psucontrol.less";
+		@import "plugins/m33fio.less";
+		@import "plugins/eeprommarlin.less";
+		@import "plugins/octolapse.less";
+
+		@import "layout/footer.less";
+
+		// For phone users
+		#files_wrapper .entry,
+		#temp .row-fluid table {
+			.transform(translateZ(0));
+			.user-select(none);
+		}
+
+	}
+}

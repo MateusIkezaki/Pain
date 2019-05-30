@@ -1,0 +1,88 @@
+/* Modal TouchUI (settings modal) */
+#settings_plugin_touchui {
+
+	div.disabled {
+		opacity: 0.4;
+		pointer-events: none;
+	}
+
+	legend {
+		label {
+			margin-top: 12px;
+
+			@media (max-width: 400px) {
+				float: none;
+				display: block;
+				margin: 0;
+			}
+		}
+	}
+
+	.track {
+		.close {
+			width: 25px;
+			height: 25px;
+			background: @main-color;
+			border: 1px solid @main-color-darker;
+			position: absolute;
+			top: 15px;
+			right: 15px;
+			border-radius: 50%;
+			opacity: 1;
+
+			&:after {
+				.font-icon-reset();
+				content: "\f00d";
+				color: @main-color-text;
+				text-align: center;
+				display: block;
+				.rem(line-height, 25);
+			}
+		}
+	}
+
+}
+
+/* Modal TouchUI (not settings) */
+#touchui_settings_dialog {
+
+	.btn-box {
+		.flex-display();
+		.flex-wrap(wrap);
+		margin: 10px 0;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	button {
+		border: 0 none;
+		.border-radius(0);
+	}
+
+	.label {
+		.flex-display();
+		.align-items(center);
+		.rem(font-size, 14);
+		.rem(line-height, 20);
+		.border-radius(0);
+		padding: 6px 9px;
+	}
+
+}
+
+/* Nabar */
+#navbar_plugin_touchui {
+	float: right;
+
+	#navbar_touchui_settings {
+		i:before {
+			content: "\f10b";
+			.rem(font-size, 28);
+			position: relative;
+			top: 5px;
+			margin-top: -9px;
+		}
+	}
+}

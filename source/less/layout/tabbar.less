@@ -1,0 +1,147 @@
+#tabs,
+#navbar #all_touchui_settings {
+
+	#tab_plugin_webcamtab_link,
+	#tab_plugin_webcamtab_link2 {
+		display: none !important;
+	}
+
+	#navbar_plugin_pi_support {
+		a:before {
+			content: none;
+		}
+		span {
+			margin-left: 5px;
+		}
+	}
+
+	#temp_link,
+	#temp_link2 {
+		a:before {
+			content: "\f0e4";
+		}
+	}
+	#control_link,
+	#control_link2 {
+		a:before {
+			content: "\f11b";
+		}
+	}
+	#gcode_link,
+	#gcode_link2 {
+		a:before {
+			content: "\f248";
+		}
+	}
+	#term_link,
+	#term_link2 {
+		a:before {
+			content: "\f120";
+		}
+	}
+	#timelapse_link,
+	#timelapse_link2 {
+		a:before {
+			content: "\f03e";
+		}
+	}
+	#webcam_link,
+	#webcam_link2 {
+		a:before {
+			content: "\f030";
+		}
+	}
+	#print_link,
+	#print_link2 {
+		a:before {
+			content: "\f233";
+		}
+	}
+
+	// Plugins
+
+	#sidebar_plugin_filamentmanager_wrapper_link,
+	#sidebar_plugin_filamentmanager_wrapper_link2 {
+		a:before {
+			content: "\f0ae";
+		}
+	}
+
+	#sidebar_plugin_estop_wrapper_link,
+	#sidebar_plugin_estop_wrapper_link2 {
+		a:before {
+			content: "\f06a";
+		}
+	}
+
+	#sidebar_plugin_bedlevelingwizard_wrapper_link,
+	#sidebar_plugin_bedlevelingwizard_wrapper_link2 {
+		a:before {
+			content: "\f0b2";
+		}
+	}
+
+	#sidebar_plugin_touchtest_wrapper_link,
+	#sidebar_plugin_touchtest_wrapper_link2 {
+		a:before {
+			content: "\f044";
+		}
+	}
+
+	#tab_plugin_enclosure_link,
+	#tab_plugin_enclosure_link2 {
+		a:before {
+			content: "\f1b2";
+		}
+	}
+
+	#tab_plugin_astroprint_link,
+	#tab_plugin_astroprint_link2 {
+		a:before {
+			content: "\f0c2";
+		}
+	}
+
+	#navbar_plugin_discordremote,
+	#navbar_plugin_discordremote2 {
+		a:before {
+			content: "\f11b";
+		}
+	}
+}
+#tabs {
+	#webcam_link {
+		.rem(font-size, 29);
+		.rem(line-height, 73);
+	}
+
+	#print_link {
+		.rem(line-height, 74);
+	}
+	
+	// Pevent FOUT! (not dutch error!)
+	&:first-child {
+		&:before {
+			font-family: "touchui";
+			content: "";
+			position: absolute;
+			top: -5000px;
+		}
+	}
+
+	&.nav-tabs {
+		.itemActive {
+			background: @main-background;
+
+			a {
+				.border-radius(0);
+				color: @main-background;
+
+				&:after,
+				&:before {
+					color: contrast(@main-background);
+				}
+			}
+		}
+	}
+}
