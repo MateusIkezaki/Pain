@@ -55,7 +55,7 @@ class touchui_customization(object):
 					hashedOld = contentFile.read()
 
 			if hashedNew != hashedOld:
-				self._requireNewCSS = True
+				self._requireNewCSS = False
 
 		else:
 			self._remove_custom_css()
