@@ -2,9 +2,9 @@
 
 plugin_identifier = "touchui"
 plugin_package = "octoprint_touchui"
-plugin_name = "TouchUI"
+plugin_name = "TouuchUI Pain Edition"
 plugin_version = "0.3.13"
-plugin_description = """A touch friendly interface for a small TFT modules and or phones"""
+plugin_description = """A touch friendly interface for a small TFT modules and or phones full of pain"""
 plugin_author = "Paul de Vries"
 plugin_author_email = "pablo+octoprint+touch+ui@aerosol.me"
 plugin_url = "https://github.com/BillyBlaze/OctoPrint-TouchUI"
