@@ -1,4 +1,4 @@
-# coding=utf-8
+#coding=utf-8
 from __future__ import absolute_import
 
 from octoprint.server import admin_permission, VERSION
@@ -74,7 +74,7 @@ class touchui_customization(object):
 				os.unlink(self._whatsNewPath)
 
 			if self._requireNewCSS is True:
-				self._requireNewCSS = False
+				#self._requireNewCSS = False
 
 			if self._settings.get(["useCustomization"]):
 				if os.path.isfile(self._customHashPath) is not True:
@@ -98,7 +98,7 @@ class touchui_customization(object):
 			self._refreshTime = time.time() + 10
 
 	def _save_custom_css(self, data):
-		self._requireNewCSS = False
+		self._requireNewCSS = True
 		hashed = ""
 
 		with open(self._customCssPath, "w+") as customCSS:
@@ -112,7 +112,7 @@ class touchui_customization(object):
 			customHash.write('{hash}'.format(hash=hashed))
 
 	def _remove_custom_css(self):
-		self._requireNewCSS = False
+		self._requireNewCSS = True
 
 		if os.path.isfile(self._customCssPath):
 			os.unlink(self._customCssPath)
