@@ -17,7 +17,7 @@ class touchui_customization(object):
 		self._customCssPath = "{base}/static/css/touchui.custom.{port}.css".format(base=os.path.dirname(__file__), port=port)
 		self._customLessPath = "{base}/static/less/touchui.bundled.less".format(base=os.path.dirname(__file__))
 		self._customHashPath = "{base}/static/css/hash.{port}.touchui".format(base=os.path.dirname(__file__), port=port)
-		self._requireNewCSS = False
+		self._requireNewCSS = True
 		self._refreshCSS = False
 		self._refreshTime = 0
 
