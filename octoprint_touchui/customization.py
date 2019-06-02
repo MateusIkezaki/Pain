@@ -18,7 +18,7 @@ class touchui_customization(object):
 		self._customLessPath = "{base}/static/less/touchui.bundled.less".format(base=os.path.dirname(__file__))
 		self._customHashPath = "{base}/static/css/hash.{port}.touchui".format(base=os.path.dirname(__file__), port=port)
 		self._requireNewCSS = True
-		self._refreshCSS = False
+		self._refreshCSS = True
 		self._refreshTime = 0
 
 		# Migrate old css file to path with port
