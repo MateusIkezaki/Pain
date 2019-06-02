@@ -17,8 +17,8 @@ class touchui_customization(object):
 		self._customCssPath = "{base}/static/css/touchui.custom.{port}.css".format(base=os.path.dirname(__file__), port=port)
 		self._customLessPath = "{base}/static/less/touchui.bundled.less".format(base=os.path.dirname(__file__))
 		self._customHashPath = "{base}/static/css/hash.{port}.touchui".format(base=os.path.dirname(__file__), port=port)
-		self._requireNewCSS = True
-		self._refreshCSS = True
+		self._requireNewCSS = False
+		self._refreshCSS = False
 		self._refreshTime = 0
 
 		# Migrate old css file to path with port
@@ -74,7 +74,7 @@ class touchui_customization(object):
 				os.unlink(self._whatsNewPath)
 
 			if self._requireNewCSS is True:
-				#self._requireNewCSS = False
+				self._requireNewCSS = False
 
 			if self._settings.get(["useCustomization"]):
 				if os.path.isfile(self._customHashPath) is not True:
@@ -98,7 +98,7 @@ class touchui_customization(object):
 			self._refreshTime = time.time() + 10
 
 	def _save_custom_css(self, data):
-		self._requireNewCSS = True
+		self._requireNewCSS = False
 		hashed = ""
 
 		with open(self._customCssPath, "w+") as customCSS:
@@ -112,7 +112,7 @@ class touchui_customization(object):
 			customHash.write('{hash}'.format(hash=hashed))
 
 	def _remove_custom_css(self):
-		self._requireNewCSS = True
+		self._requireNewCSS = False
 
 		if os.path.isfile(self._customCssPath):
 			os.unlink(self._customCssPath)
