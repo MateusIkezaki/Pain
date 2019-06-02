@@ -1,5 +1,5 @@
 .dropdown {
-	&-toggle {
+	/*&-toggle {
 		&.open {
 			+ .dropdown-menu, .dropdown-menu {
 				 display: block;
@@ -17,7 +17,7 @@
 				text-indent: 0 !important;
 			}
 		}
-	}
+	}*/
 }
 
 .dropdown-submenu {
@@ -26,7 +26,8 @@
 			.font-icon-reset();
 			content: "\f0d7";
 			float: none;
-			position: absolute;
+			//position: absolute;
+			position: sticky;
 			top: 13px;
 			margin: 0;
 			right: 30px;
@@ -62,9 +63,14 @@
 	padding: (@dropdown-gutter / 3) 0;
 	max-width: 100vw;
 
-	@media (max-width: 300px) {
+	/*@media (max-width: 300px) {
 		width: 90vw;
 		min-width: 0 !important;
+	}*/
+	
+	@media (max-width: 300px) {
+		width: 1vw;
+		min-width: 5 !important;
 	}
 
 	&:after {

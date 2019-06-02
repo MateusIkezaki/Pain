@@ -75,7 +75,7 @@ gulp.task('js:concat:app', function () {
 			'source/js/**/**/*.js'
 		])
 		.pipe(concat('touchui.bundled.js'))
-		//.pipe(uglify())
+		.pipe(uglify())
 		.pipe(gulp.dest('octoprint_touchui/static/js/'));
 });
 
